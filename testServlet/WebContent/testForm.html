@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel = "stylesheet" href = "styleTest.css"/>
+<title>Vinsmoke</title>
+</head>
+<body>
+<h1>GERMA66</h1>
+<form method="POST" action = "SignInServlet" >
+  <fieldset>
+    <legend>Personal information:</legend>
+    User Name:
+    <input type="text" name="username" id = "username" autofocus><br>
+    Password:
+    <input type="password" name="pwd" id = "pwd"><br>
+    Gender:
+    <input type="radio" name="gender" value="male" checked> Male
+    <input type="radio" name="gender" value="female"> Female<br>
+    Age:
+    <input type="number" name="age" id = "age" min="1" max="130"><br>
+    Address:
+    <input type="textarea" name="address" id = "address" rows = "10"><br>
+    Hobbies:
+      <select name="hobbies">
+        <option value="Select Down">Select Down</option>
+        <option value="Playing Games">Playing Games</option>
+        <option value="Sleeping">Sleeping</option>
+        <option value="fighting">Fighting</option>
+        <option value="auditing">Auditing</option>
+      </select><br>
+    Music:
+    <input type="checkbox" name="music" value="Blues"> Blues &nbsp
+    <input type="checkbox" name="music" value = "Rap" > Rap &nbsp
+    <input type="checkbox" name="music" value="Jazz" checked> Jazz<br> 
+    Date of Birth:
+    <input type="date" name="date" id = "add"><br><br>
+    Favorite Color:
+      <input type="color" name="favcolor"><br>
+    <input type = "submit" value = "Submit">
+  </fieldset>
+</form>
+</body>
+</html>

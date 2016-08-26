@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Register yourself</h2>
+<div id="message" style="background-color: red"></div>
+<form method="POST" action="RegisterServlet">
+	<input type="text" id="username" name="username" onblur="validateExistingUser()"/>
+	<input type="password" name="pwd" />
+	<input type="text" name="cpwd" />
+	<input type="submit" id = "btn_submit" value="Register"/>
+</form>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+    //JQuery stuff
+       
+        function validateExistingUser(){
+    			console.log("blur event")
+//    			var myurl = "RegisterServlet?username=" + $("#username").val();
+    			var myurl = "RegisterServlet";
+    			console.log(myurl);
+    		
+        $.ajax(
+            
+            {url: myurl, 
+            	method: "GET",
+            
+                success: function(result){
+                    console.log(result)
+                    console.log(result.exists)
+                    if(result.exists)
+                    {
+                    		$("#message").html("User already exists -- Try with a new user name");
+                    		$('#btn_submit').attr('disabled',true);
+                    }
+                    else
+                    {
+                    	$('#btn_submit').attr('disabled',false);
+                    }
+                 }
+            });
+            
+            
+        } 
+        
+//        
+//        console.log($('#demo'))
+//        $('#demo').text('Change the text')
+    </script>
+<script>
+/*  Write JavaScript code to match password and confirm password */
+</script>
+
+</body>
+</html>
